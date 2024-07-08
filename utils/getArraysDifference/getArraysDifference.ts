@@ -12,7 +12,8 @@ export const getArraysDifference = ({
     mainArray,
     arrayToCompareWith,
 }: getArraysDifferenceParams): unknown[] => {
+    const setToCompareWith = new Set(arrayToCompareWith);
     return mainArray.filter((i) => {
-        return !arrayToCompareWith.includes(i);
+        return !setToCompareWith.has(i);
     });
 };
